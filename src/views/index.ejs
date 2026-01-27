@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Bot</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="avatar">🤖</div>
+            <div>
+                <h2>Gourmet Bot</h2>
+                <span class="status">Online</span>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="messages">
+            </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Type a number (e.g., 1, 99)..." autocomplete="off">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        if(status === 'success') {
+            alert('Payment Successful! Your order is being processed.');
+        }
+    </script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
